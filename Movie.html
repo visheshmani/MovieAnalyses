@@ -1,32 +1,33 @@
 <H1><b>TMDb movie data</b></H1>
 
 <u>(cleaned from original data on Kaggle)</u>
-<p>
+
 This data set contains information about 10,000 movies collected from The Movie Database (TMDb), including user ratings and revenue.
 
 Certain columns, like ‘cast’ and ‘genres’, contain multiple values separated by pipe (|) characters.
 There are some odd characters in the ‘cast’ column. Don’t worry about cleaning them. You can leave them as is.
 The final two columns ending with “_adj” show the budget and revenue of the associated movie in terms of 2010 dollars, accounting for inflation over time.
-</p>
+
 Questions to be answered:
 
 <i><H3>
-<ul>1. Top 5 Movies (rating wise)</ul>
-<ul>2. Top 5 Costliest Movies</ul>
-<ul>3. Top 5 Grossing Movies</ul>
-<ul>4. Top 5 Money Making Movies</ul>
-<ul>5. Top 5 Money losing Movies</ul>
-<ul>6. Most Movie Making Director</ul>
-<ul>7. Best Movies Each Year (Earning Wise)</ul>
-<ul>8. Top 5 Successful Director (Earning Wise)</ul>
-<ul>9. Visualize how top earnings have grown through out the years</ul>
-<ul>10. Visualize losses through out the years (in terms of Percentage)</ul>
+1. Top 5 Movies (rating wise)</H3></br>
+2. Top 5 Costliest Movies</br>
+3. Top 5 Grossing Movies</br>
+4. Top 5 Money Making Movies</br>
+5. Top 5 Money losing Movies</br>
+6. Most Movie Making Director</br>
+7. Best Movies Each Year (Earning Wise)</br>
+8. Top 5 Successful Director (Earning Wise)</br>
+9. Visualize how top earnings have grown through out the years</br>
+10. Visualize losses through out the years (in terms of Percentage)</br>
+11. Analyze the pattern of movie making by the most successful Director</br>
 </H3></i>
-
-Note : Movies will be considered for shortlisting only if below conditions are satisfied:
-1. Movie run time is greater than 90 Minutes
-2. budget is greater than 0
-3. revenue is greater than 0
+</br>
+Note : (Limitations) Movies will be considered for shortlisting only if below conditions are satisfied:</br>
+1. Movie run time is greater than 90 Minutes</br>
+2. budget is greater than 0</br>
+3. revenue is greater than 0</br>
 4. Director in not blank
 </br></br>
 
@@ -37,20 +38,237 @@ Note : Movies will be considered for shortlisting only if below conditions are s
 <ul>Whiplash -> 8.2</ul>
 <ul>The Godfather:  Part II -> 8.1</ul>
 <ul>Forrest Gump -> 8.1</ul>
-
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>original_title</th>
+      <th>vote_average</th>
+      <th>budget</th>
+      <th>runtime</th>
+      <th>revenue</th>
+      <th>popularity</th>
+      <th>release_year</th>
+      <th>director</th>
+      <th>genres</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>The Shawshank Redemption</td>
+      <td>8.4</td>
+      <td>25000000</td>
+      <td>142</td>
+      <td>28341469</td>
+      <td>7.192039</td>
+      <td>1994</td>
+      <td>Frank Darabont</td>
+      <td>Drama|Crime</td>
+    </tr>
+    <tr>
+      <td>The Godfather</td>
+      <td>8.3</td>
+      <td>6000000</td>
+      <td>175</td>
+      <td>245066411</td>
+      <td>5.738034</td>
+      <td>1972</td>
+      <td>Francis Ford Coppola</td>
+      <td>Drama|Crime</td>
+    </tr>
+    <tr>
+      <td>Whiplash</td>
+      <td>8.2</td>
+      <td>3300000</td>
+      <td>105</td>
+      <td>13993093</td>
+      <td>4.780419</td>
+      <td>2014</td>
+      <td>Damien Chazelle</td>
+      <td>Drama|Music</td>
+    </tr>
+    <tr>
+      <td>The Godfather: Part II</td>
+      <td>8.1</td>
+      <td>13000000</td>
+      <td>200</td>
+      <td>47542841</td>
+      <td>3.264571</td>
+      <td>1974</td>
+      <td>Francis Ford Coppola</td>
+      <td>Drama|Crime</td>
+    </tr>
+    <tr>
+      <td>Forrest Gump</td>
+      <td>8.1</td>
+      <td>55000000</td>
+      <td>142</td>
+      <td>677945399</td>
+      <td>6.715966</td>
+      <td>1994</td>
+      <td>Robert Zemeckis</td>
+      <td>Comedy|Drama|Romance</td>
+    </tr>
+  </tbody>
+</table>
+</br>
 <b>2. Top 5 Costliest Movies</b>
 <ul>The Warrior's Way</ul>
 <ul>Pirates of the Caribbean: On Stranger Tides</ul>
 <ul>Pirates of the Caribbean: At World's End</ul>
 <ul>Avengers: Age of Ultron </ul>
 <ul>Superman Returns</ul>
-
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>original_title</th>
+      <th>vote_average</th>
+      <th>budget</th>
+      <th>runtime</th>
+      <th>revenue</th>
+      <th>popularity</th>
+      <th>release_year</th>
+      <th>director</th>
+      <th>genres</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>The Warrior's Way</td>
+      <td>6.4</td>
+      <td>425000000</td>
+      <td>100</td>
+      <td>11087569</td>
+      <td>0.250540</td>
+      <td>2010</td>
+      <td>Sngmoo Lee</td>
+      <td>Adventure|Fantasy|Action|Western|Thriller</td>
+    </tr>
+    <tr>
+      <td>Pirates of the Caribbean: On Stranger Tides</td>
+      <td>6.3</td>
+      <td>380000000</td>
+      <td>136</td>
+      <td>1021683000</td>
+      <td>4.955130</td>
+      <td>2011</td>
+      <td>Rob Marshall</td>
+      <td>Adventure|Action|Fantasy</td>
+    </tr>
+    <tr>
+      <td>Pirates of the Caribbean: At World's End</td>
+      <td>6.8</td>
+      <td>300000000</td>
+      <td>169</td>
+      <td>961000000</td>
+      <td>4.965391</td>
+      <td>2007</td>
+      <td>Gore Verbinski</td>
+      <td>Adventure|Fantasy|Action</td>
+    </tr>
+    <tr>
+      <td>Avengers: Age of Ultron</td>
+      <td>7.4</td>
+      <td>280000000</td>
+      <td>141</td>
+      <td>1405035767</td>
+      <td>5.944927</td>
+      <td>2015</td>
+      <td>Joss Whedon</td>
+      <td>Action|Adventure|Science Fiction</td>
+    </tr>
+    <tr>
+      <td>Superman Returns</td>
+      <td>5.3</td>
+      <td>270000000</td>
+      <td>154</td>
+      <td>391081192</td>
+      <td>1.957331</td>
+      <td>2006</td>
+      <td>Bryan Singer</td>
+      <td>Adventure|Fantasy|Action|Science Fiction</td>
+    </tr>
+  </tbody>
+</table>
+</br>
 <b>3. Top 5 Grossing Movies</b>
 <ul>Avatar</ul>
 <ul>Star Wars: The Force Awakens</ul>
 <ul>Titanic</ul>
 <ul>The Avengers</ul>
 <ul>Jurassic World</ul>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>original_title</th>
+      <th>vote_average</th>
+      <th>budget</th>
+      <th>runtime</th>
+      <th>revenue</th>
+      <th>popularity</th>
+      <th>release_year</th>
+      <th>director</th>
+      <th>genres</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Avatar</td>
+      <td>7.1</td>
+      <td>237000000</td>
+      <td>162</td>
+      <td>2781505847</td>
+      <td>9.432768</td>
+      <td>2009</td>
+      <td>James Cameron</td>
+      <td>Action|Adventure|Fantasy|Science Fiction</td>
+    </tr>
+    <tr>
+      <td>Star Wars: The Force Awakens</td>
+      <td>7.5</td>
+      <td>200000000</td>
+      <td>136</td>
+      <td>2068178225</td>
+      <td>11.173104</td>
+      <td>2015</td>
+      <td>J.J. Abrams</td>
+      <td>Action|Adventure|Science Fiction|Fantasy</td>
+    </tr>
+    <tr>
+      <td>Titanic</td>
+      <td>7.3</td>
+      <td>200000000</td>
+      <td>194</td>
+      <td>1845034188</td>
+      <td>4.355219</td>
+      <td>1997</td>
+      <td>James Cameron</td>
+      <td>Drama|Romance|Thriller</td>
+    </tr>
+    <tr>
+      <td>The Avengers</td>
+      <td>7.3</td>
+      <td>220000000</td>
+      <td>143</td>
+      <td>1519557910</td>
+      <td>7.637767</td>
+      <td>2012</td>
+      <td>Joss Whedon</td>
+      <td>Science Fiction|Action|Adventure</td>
+    </tr>
+    <tr>
+      <td>Jurassic World</td>
+      <td>6.5</td>
+      <td>150000000</td>
+      <td>124</td>
+      <td>1513528810</td>
+      <td>32.985763</td>
+      <td>2015</td>
+      <td>Colin Trevorrow</td>
+      <td>Action|Adventure|Science Fiction|Thriller</td>
+    </tr>
+  </tbody>
+</table>
+</br>
 
 <b>4. Top 5 Money Making Movies</b>
 <ul>Avatar</ul>
@@ -58,19 +276,990 @@ Note : Movies will be considered for shortlisting only if below conditions are s
 <ul>Titanic</ul>
 <ul>Jurassic World</ul>
 <ul>Furious 7</ul>
-
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>original_title</th>
+      <th>vote_average</th>
+      <th>budget</th>
+      <th>runtime</th>
+      <th>revenue</th>
+      <th>popularity</th>
+      <th>release_year</th>
+      <th>director</th>
+      <th>genres</th>
+      <th>earnings</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Avatar</td>
+      <td>7.1</td>
+      <td>237000000</td>
+      <td>162</td>
+      <td>2781505847</td>
+      <td>9.432768</td>
+      <td>2009</td>
+      <td>James Cameron</td>
+      <td>Action|Adventure|Fantasy|Science Fiction</td>
+      <td>2544505847</td>
+    </tr>
+    <tr>
+      <td>Star Wars: The Force Awakens</td>
+      <td>7.5</td>
+      <td>200000000</td>
+      <td>136</td>
+      <td>2068178225</td>
+      <td>11.173104</td>
+      <td>2015</td>
+      <td>J.J. Abrams</td>
+      <td>Action|Adventure|Science Fiction|Fantasy</td>
+      <td>1868178225</td>
+    </tr>
+    <tr>
+      <td>Titanic</td>
+      <td>7.3</td>
+      <td>200000000</td>
+      <td>194</td>
+      <td>1845034188</td>
+      <td>4.355219</td>
+      <td>1997</td>
+      <td>James Cameron</td>
+      <td>Drama|Romance|Thriller</td>
+      <td>1645034188</td>
+    </tr>
+    <tr>
+      <td>Jurassic World</td>
+      <td>6.5</td>
+      <td>150000000</td>
+      <td>124</td>
+      <td>1513528810</td>
+      <td>32.985763</td>
+      <td>2015</td>
+      <td>Colin Trevorrow</td>
+      <td>Action|Adventure|Science Fiction|Thriller</td>
+      <td>1363528810</td>
+    </tr>
+    <tr>
+      <td>Furious 7</td>
+      <td>7.3</td>
+      <td>190000000</td>
+      <td>137</td>
+      <td>1506249360</td>
+      <td>9.335014</td>
+      <td>2015</td>
+      <td>James Wan</td>
+      <td>Action|Crime|Thriller</td>
+      <td>1316249360</td>
+    </tr>
+  </tbody>
+</table>
+</br>
 <b>5. Top 5 Money losing Movies</b>
 <ul>The Warrior's Way</ul>
 <ul>The Lone Ranger</ul>
 <ul>The Alamo</ul>
 <ul>The 13th Warrior</ul>
 <ul>The Adventures of Pluto Nash</ul>
-
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>id</th>
+      <th>imdb_id</th>
+      <th>popularity</th>
+      <th>budget</th>
+      <th>revenue</th>
+      <th>original_title</th>
+      <th>cast</th>
+      <th>homepage</th>
+      <th>director</th>
+      <th>tagline</th>
+      <th>...</th>
+      <th>runtime</th>
+      <th>genres</th>
+      <th>production_companies</th>
+      <th>release_date</th>
+      <th>vote_count</th>
+      <th>vote_average</th>
+      <th>release_year</th>
+      <th>budget_adj</th>
+      <th>revenue_adj</th>
+      <th>earnings</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>46528</td>
+      <td>tt1032751</td>
+      <td>0.250540</td>
+      <td>425000000</td>
+      <td>11087569</td>
+      <td>The Warrior's Way</td>
+      <td>Kate Bosworth|Jang Dong-gun|Geoffrey Rush|Dann...</td>
+      <td>http://www.iamrogue.com/thewarriorsway</td>
+      <td>Sngmoo Lee</td>
+      <td>Assassin. Hero. Legend.</td>
+      <td>...</td>
+      <td>100</td>
+      <td>Adventure|Fantasy|Action|Western|Thriller</td>
+      <td>Boram Entertainment Inc.</td>
+      <td>12/2/10</td>
+      <td>74</td>
+      <td>6.4</td>
+      <td>2010</td>
+      <td>4.250000e+08</td>
+      <td>1.108757e+07</td>
+      <td>-413912431</td>
+    </tr>
+    <tr>
+      <td>57201</td>
+      <td>tt1210819</td>
+      <td>1.214510</td>
+      <td>255000000</td>
+      <td>89289910</td>
+      <td>The Lone Ranger</td>
+      <td>Johnny Depp|Armie Hammer|William Fichtner|Hele...</td>
+      <td>http://disney.go.com/the-lone-ranger/</td>
+      <td>Gore Verbinski</td>
+      <td>Never Take Off the Mask</td>
+      <td>...</td>
+      <td>149</td>
+      <td>Action|Adventure|Western</td>
+      <td>Walt Disney Pictures|Jerry Bruckheimer Films|I...</td>
+      <td>7/3/13</td>
+      <td>1607</td>
+      <td>6.0</td>
+      <td>2013</td>
+      <td>2.386885e+08</td>
+      <td>8.357833e+07</td>
+      <td>-165710090</td>
+    </tr>
+    <tr>
+      <td>10733</td>
+      <td>tt0318974</td>
+      <td>0.948560</td>
+      <td>145000000</td>
+      <td>25819961</td>
+      <td>The Alamo</td>
+      <td>Dennis Quaid|Billy Bob Thornton|Jason Patric|P...</td>
+      <td>NaN</td>
+      <td>John Lee Hancock</td>
+      <td>You will never forget</td>
+      <td>...</td>
+      <td>137</td>
+      <td>Western|History|War</td>
+      <td>Imagine Entertainment|Touchstone Pictures</td>
+      <td>4/7/04</td>
+      <td>60</td>
+      <td>5.9</td>
+      <td>2004</td>
+      <td>1.673946e+08</td>
+      <td>2.980774e+07</td>
+      <td>-119180039</td>
+    </tr>
+    <tr>
+      <td>1911</td>
+      <td>tt0120657</td>
+      <td>1.189386</td>
+      <td>160000000</td>
+      <td>61698899</td>
+      <td>The 13th Warrior</td>
+      <td>Antonio Banderas|Vladimir Kulich|Dennis StorhÃ...</td>
+      <td>NaN</td>
+      <td>John McTiernan</td>
+      <td>Prey for the living.</td>
+      <td>...</td>
+      <td>102</td>
+      <td>Adventure|Fantasy|Action</td>
+      <td>Touchstone Pictures</td>
+      <td>8/27/99</td>
+      <td>275</td>
+      <td>6.2</td>
+      <td>1999</td>
+      <td>2.094485e+08</td>
+      <td>8.076712e+07</td>
+      <td>-98301101</td>
+    </tr>
+    <tr>
+      <td>11692</td>
+      <td>tt0180052</td>
+      <td>0.912373</td>
+      <td>100000000</td>
+      <td>7103973</td>
+      <td>The Adventures of Pluto Nash</td>
+      <td>Eddie Murphy|Randy Quaid|Rosario Dawson|Joe Pa...</td>
+      <td>NaN</td>
+      <td>Ron Underwood</td>
+      <td>Action's future has arrived...</td>
+      <td>...</td>
+      <td>95</td>
+      <td>Action|Comedy|Science Fiction</td>
+      <td>Village Roadshow Pictures|Castle Rock Entertai...</td>
+      <td>8/15/02</td>
+      <td>75</td>
+      <td>4.6</td>
+      <td>2002</td>
+      <td>1.212261e+08</td>
+      <td>8.611872e+06</td>
+      <td>-92896027</td>
+    </tr>
+  </tbody>
+</table>
+</br>
 <b>6. Most Movie Making Director</b>
 <ul>Steven Spielberg </ul>
-
+<pre>
+Steven Spielberg  ->  27 Movies</pre>
+</br>
 <b>7. Best Movies Each Year (Earning Wise)</b>
-<ul>Please see the answer in the notebook</ul>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>original_title</th>
+      <th>vote_average</th>
+      <th>budget</th>
+      <th>runtime</th>
+      <th>revenue</th>
+      <th>popularity</th>
+      <th>release_year</th>
+      <th>director</th>
+      <th>genres</th>
+      <th>earnings</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>10143</th>
+      <td>Spartacus</td>
+      <td>6.9</td>
+      <td>12000000</td>
+      <td>197</td>
+      <td>60000000</td>
+      <td>1.136943</td>
+      <td>1960</td>
+      <td>Stanley Kubrick</td>
+      <td>Action|Drama|History</td>
+      <td>48000000</td>
+    </tr>
+    <tr>
+      <th>10112</th>
+      <td>West Side Story</td>
+      <td>6.6</td>
+      <td>6000000</td>
+      <td>152</td>
+      <td>43656822</td>
+      <td>0.900245</td>
+      <td>1961</td>
+      <td>Jerome Robbins|Robert Wise</td>
+      <td>Music|Crime|Drama</td>
+      <td>37656822</td>
+    </tr>
+    <tr>
+      <th>9849</th>
+      <td>Dr. No</td>
+      <td>6.7</td>
+      <td>1100000</td>
+      <td>110</td>
+      <td>59600000</td>
+      <td>3.170651</td>
+      <td>1962</td>
+      <td>Terence Young</td>
+      <td>Adventure|Action|Thriller</td>
+      <td>58500000</td>
+    </tr>
+    <tr>
+      <th>10438</th>
+      <td>From Russia With Love</td>
+      <td>6.7</td>
+      <td>2500000</td>
+      <td>115</td>
+      <td>78898765</td>
+      <td>2.508235</td>
+      <td>1963</td>
+      <td>Terence Young</td>
+      <td>Action|Thriller|Adventure</td>
+      <td>76398765</td>
+    </tr>
+    <tr>
+      <th>9881</th>
+      <td>Goldfinger</td>
+      <td>7.0</td>
+      <td>3500000</td>
+      <td>110</td>
+      <td>124900000</td>
+      <td>3.153791</td>
+      <td>1964</td>
+      <td>Guy Hamilton</td>
+      <td>Adventure|Action|Thriller</td>
+      <td>121400000</td>
+    </tr>
+    <tr>
+      <th>10690</th>
+      <td>The Sound of Music</td>
+      <td>7.2</td>
+      <td>8200000</td>
+      <td>174</td>
+      <td>163214286</td>
+      <td>1.313676</td>
+      <td>1965</td>
+      <td>Robert Wise</td>
+      <td>Drama|Family|Music|Romance</td>
+      <td>155014286</td>
+    </tr>
+    <tr>
+      <th>10822</th>
+      <td>Who's Afraid of Virginia Woolf?</td>
+      <td>7.5</td>
+      <td>7500000</td>
+      <td>131</td>
+      <td>33736689</td>
+      <td>0.670274</td>
+      <td>1966</td>
+      <td>Mike Nichols</td>
+      <td>Drama</td>
+      <td>26236689</td>
+    </tr>
+    <tr>
+      <th>10401</th>
+      <td>You Only Live Twice</td>
+      <td>6.2</td>
+      <td>9500000</td>
+      <td>117</td>
+      <td>111584787</td>
+      <td>1.554808</td>
+      <td>1967</td>
+      <td>Lewis Gilbert</td>
+      <td>Action|Thriller|Adventure</td>
+      <td>102084787</td>
+    </tr>
+    <tr>
+      <th>9719</th>
+      <td>2001: A Space Odyssey</td>
+      <td>7.7</td>
+      <td>12000000</td>
+      <td>149</td>
+      <td>56715371</td>
+      <td>3.309196</td>
+      <td>1968</td>
+      <td>Stanley Kubrick</td>
+      <td>Science Fiction|Mystery|Adventure</td>
+      <td>44715371</td>
+    </tr>
+    <tr>
+      <th>10725</th>
+      <td>Butch Cassidy and the Sundance Kid</td>
+      <td>7.0</td>
+      <td>6000000</td>
+      <td>110</td>
+      <td>102308889</td>
+      <td>1.357317</td>
+      <td>1969</td>
+      <td>George Roy Hill</td>
+      <td>History|Drama|Western|Crime</td>
+      <td>96308889</td>
+    </tr>
+    <tr>
+      <th>10654</th>
+      <td>Love Story</td>
+      <td>6.6</td>
+      <td>2200000</td>
+      <td>99</td>
+      <td>136400000</td>
+      <td>0.396028</td>
+      <td>1970</td>
+      <td>Arthur Hiller</td>
+      <td>Drama|Romance</td>
+      <td>134200000</td>
+    </tr>
+    <tr>
+      <th>9925</th>
+      <td>Diamonds Are Forever</td>
+      <td>6.2</td>
+      <td>7200000</td>
+      <td>120</td>
+      <td>116000000</td>
+      <td>1.755117</td>
+      <td>1971</td>
+      <td>Guy Hamilton</td>
+      <td>Adventure|Action|Thriller|Science Fiction</td>
+      <td>108800000</td>
+    </tr>
+    <tr>
+      <th>7269</th>
+      <td>The Godfather</td>
+      <td>8.3</td>
+      <td>6000000</td>
+      <td>175</td>
+      <td>245066411</td>
+      <td>5.738034</td>
+      <td>1972</td>
+      <td>Francis Ford Coppola</td>
+      <td>Drama|Crime</td>
+      <td>239066411</td>
+    </tr>
+    <tr>
+      <th>10594</th>
+      <td>The Exorcist</td>
+      <td>7.2</td>
+      <td>8000000</td>
+      <td>122</td>
+      <td>441306145</td>
+      <td>2.010733</td>
+      <td>1973</td>
+      <td>William Friedkin</td>
+      <td>Drama|Horror|Thriller</td>
+      <td>433306145</td>
+    </tr>
+    <tr>
+      <th>9767</th>
+      <td>Blazing Saddles</td>
+      <td>7.0</td>
+      <td>2600000</td>
+      <td>93</td>
+      <td>119500000</td>
+      <td>0.577802</td>
+      <td>1974</td>
+      <td>Mel Brooks</td>
+      <td>Comedy|Western</td>
+      <td>116900000</td>
+    </tr>
+    <tr>
+      <th>9806</th>
+      <td>Jaws</td>
+      <td>7.3</td>
+      <td>7000000</td>
+      <td>124</td>
+      <td>470654000</td>
+      <td>2.563191</td>
+      <td>1975</td>
+      <td>Steven Spielberg</td>
+      <td>Horror|Thriller|Adventure</td>
+      <td>463654000</td>
+    </tr>
+    <tr>
+      <th>10208</th>
+      <td>A Star Is Born</td>
+      <td>5.7</td>
+      <td>6000000</td>
+      <td>139</td>
+      <td>161000000</td>
+      <td>0.155768</td>
+      <td>1976</td>
+      <td>Frank Pierson</td>
+      <td>Drama|Music|Romance</td>
+      <td>155000000</td>
+    </tr>
+    <tr>
+      <th>1329</th>
+      <td>Star Wars</td>
+      <td>7.9</td>
+      <td>11000000</td>
+      <td>121</td>
+      <td>775398007</td>
+      <td>12.037933</td>
+      <td>1977</td>
+      <td>George Lucas</td>
+      <td>Adventure|Action|Science Fiction</td>
+      <td>764398007</td>
+    </tr>
+    <tr>
+      <th>10758</th>
+      <td>Superman</td>
+      <td>6.7</td>
+      <td>55000000</td>
+      <td>143</td>
+      <td>300218018</td>
+      <td>1.210324</td>
+      <td>1978</td>
+      <td>Richard Donner</td>
+      <td>Adventure|Fantasy|Action|Science Fiction</td>
+      <td>245218018</td>
+    </tr>
+    <tr>
+      <th>7833</th>
+      <td>Rocky II</td>
+      <td>6.8</td>
+      <td>7000000</td>
+      <td>119</td>
+      <td>200182160</td>
+      <td>1.049233</td>
+      <td>1979</td>
+      <td>Sylvester Stallone</td>
+      <td>Drama</td>
+      <td>193182160</td>
+    </tr>
+    <tr>
+      <th>7309</th>
+      <td>The Empire Strikes Back</td>
+      <td>8.0</td>
+      <td>18000000</td>
+      <td>124</td>
+      <td>538400000</td>
+      <td>5.488441</td>
+      <td>1980</td>
+      <td>Irvin Kershner</td>
+      <td>Adventure|Action|Science Fiction</td>
+      <td>520400000</td>
+    </tr>
+    <tr>
+      <th>8375</th>
+      <td>Raiders of the Lost Ark</td>
+      <td>7.5</td>
+      <td>18000000</td>
+      <td>115</td>
+      <td>389925971</td>
+      <td>4.578300</td>
+      <td>1981</td>
+      <td>Steven Spielberg</td>
+      <td>Adventure|Action</td>
+      <td>371925971</td>
+    </tr>
+    <tr>
+      <th>8889</th>
+      <td>E.T. the Extra-Terrestrial</td>
+      <td>7.2</td>
+      <td>10500000</td>
+      <td>115</td>
+      <td>792910554</td>
+      <td>2.900556</td>
+      <td>1982</td>
+      <td>Steven Spielberg</td>
+      <td>Science Fiction|Adventure|Family|Fantasy</td>
+      <td>782410554</td>
+    </tr>
+    <tr>
+      <th>7987</th>
+      <td>Return of the Jedi</td>
+      <td>7.8</td>
+      <td>32350000</td>
+      <td>135</td>
+      <td>572700000</td>
+      <td>4.828854</td>
+      <td>1983</td>
+      <td>Richard Marquand</td>
+      <td>Adventure|Action|Science Fiction</td>
+      <td>540350000</td>
+    </tr>
+    <tr>
+      <th>7883</th>
+      <td>Indiana Jones and the Temple of Doom</td>
+      <td>6.9</td>
+      <td>28000000</td>
+      <td>118</td>
+      <td>333000000</td>
+      <td>2.556799</td>
+      <td>1984</td>
+      <td>Steven Spielberg</td>
+      <td>Adventure|Action</td>
+      <td>305000000</td>
+    </tr>
+    <tr>
+      <th>6081</th>
+      <td>Back to the Future</td>
+      <td>7.8</td>
+      <td>19000000</td>
+      <td>116</td>
+      <td>381109762</td>
+      <td>6.095293</td>
+      <td>1985</td>
+      <td>Robert Zemeckis</td>
+      <td>Adventure|Comedy|Science Fiction|Family</td>
+      <td>362109762</td>
+    </tr>
+    <tr>
+      <th>10475</th>
+      <td>Top Gun</td>
+      <td>6.6</td>
+      <td>15000000</td>
+      <td>110</td>
+      <td>356830601</td>
+      <td>1.469796</td>
+      <td>1986</td>
+      <td>Tony Scott</td>
+      <td>Drama|Action|Romance</td>
+      <td>341830601</td>
+    </tr>
+    <tr>
+      <th>9613</th>
+      <td>Fatal Attraction</td>
+      <td>6.4</td>
+      <td>14000000</td>
+      <td>119</td>
+      <td>320145693</td>
+      <td>0.865813</td>
+      <td>1987</td>
+      <td>Adrian Lyne</td>
+      <td>Horror|Drama|Romance|Thriller</td>
+      <td>306145693</td>
+    </tr>
+    <tr>
+      <th>9454</th>
+      <td>Rain Man</td>
+      <td>7.4</td>
+      <td>25000000</td>
+      <td>133</td>
+      <td>354825435</td>
+      <td>1.459821</td>
+      <td>1988</td>
+      <td>Barry Levinson</td>
+      <td>Drama</td>
+      <td>329825435</td>
+    </tr>
+    <tr>
+      <th>9180</th>
+      <td>Indiana Jones and the Last Crusade</td>
+      <td>7.4</td>
+      <td>48000000</td>
+      <td>127</td>
+      <td>474171806</td>
+      <td>3.536655</td>
+      <td>1989</td>
+      <td>Steven Spielberg</td>
+      <td>Adventure|Action</td>
+      <td>426171806</td>
+    </tr>
+    <tr>
+      <th>9986</th>
+      <td>Ghost</td>
+      <td>6.7</td>
+      <td>22000000</td>
+      <td>127</td>
+      <td>505000000</td>
+      <td>1.513223</td>
+      <td>1990</td>
+      <td>Jerry Zucker</td>
+      <td>Fantasy|Drama|Thriller|Mystery|Romance</td>
+      <td>483000000</td>
+    </tr>
+    <tr>
+      <th>9317</th>
+      <td>Terminator 2: Judgment Day</td>
+      <td>7.5</td>
+      <td>100000000</td>
+      <td>137</td>
+      <td>520000000</td>
+      <td>3.584406</td>
+      <td>1991</td>
+      <td>James Cameron</td>
+      <td>Action|Thriller|Science Fiction</td>
+      <td>420000000</td>
+    </tr>
+    <tr>
+      <th>8243</th>
+      <td>Aladdin</td>
+      <td>7.3</td>
+      <td>28000000</td>
+      <td>90</td>
+      <td>504050219</td>
+      <td>3.966538</td>
+      <td>1992</td>
+      <td>Ron Clements|John Musker</td>
+      <td>Animation|Family|Comedy|Adventure|Fantasy</td>
+      <td>476050219</td>
+    </tr>
+    <tr>
+      <th>10223</th>
+      <td>Jurassic Park</td>
+      <td>7.4</td>
+      <td>63000000</td>
+      <td>127</td>
+      <td>920100000</td>
+      <td>2.204926</td>
+      <td>1993</td>
+      <td>Steven Spielberg</td>
+      <td>Adventure|Science Fiction</td>
+      <td>857100000</td>
+    </tr>
+    <tr>
+      <th>4179</th>
+      <td>Forrest Gump</td>
+      <td>8.1</td>
+      <td>55000000</td>
+      <td>142</td>
+      <td>677945399</td>
+      <td>6.715966</td>
+      <td>1994</td>
+      <td>Robert Zemeckis</td>
+      <td>Comedy|Drama|Romance</td>
+      <td>622945399</td>
+    </tr>
+    <tr>
+      <th>8094</th>
+      <td>The Net</td>
+      <td>5.6</td>
+      <td>22000000</td>
+      <td>114</td>
+      <td>1106279658</td>
+      <td>1.136610</td>
+      <td>1995</td>
+      <td>Irwin Winkler</td>
+      <td>Crime|Drama|Mystery|Thriller|Action</td>
+      <td>1084279658</td>
+    </tr>
+    <tr>
+      <th>8457</th>
+      <td>Independence Day</td>
+      <td>6.6</td>
+      <td>75000000</td>
+      <td>145</td>
+      <td>816969268</td>
+      <td>4.480733</td>
+      <td>1996</td>
+      <td>Roland Emmerich</td>
+      <td>Action|Adventure|Science Fiction</td>
+      <td>741969268</td>
+    </tr>
+    <tr>
+      <th>5231</th>
+      <td>Titanic</td>
+      <td>7.3</td>
+      <td>200000000</td>
+      <td>194</td>
+      <td>1845034188</td>
+      <td>4.355219</td>
+      <td>1997</td>
+      <td>James Cameron</td>
+      <td>Drama|Romance|Thriller</td>
+      <td>1645034188</td>
+    </tr>
+    <tr>
+      <th>8970</th>
+      <td>Armageddon</td>
+      <td>6.4</td>
+      <td>140000000</td>
+      <td>151</td>
+      <td>553799566</td>
+      <td>2.993102</td>
+      <td>1998</td>
+      <td>Michael Bay</td>
+      <td>Action|Thriller|Science Fiction|Adventure</td>
+      <td>413799566</td>
+    </tr>
+    <tr>
+      <th>2412</th>
+      <td>Star Wars: Episode I - The Phantom Menace</td>
+      <td>6.3</td>
+      <td>115000000</td>
+      <td>136</td>
+      <td>924317558</td>
+      <td>3.526029</td>
+      <td>1999</td>
+      <td>George Lucas</td>
+      <td>Adventure|Action|Science Fiction</td>
+      <td>809317558</td>
+    </tr>
+    <tr>
+      <th>8666</th>
+      <td>Mission: Impossible II</td>
+      <td>5.8</td>
+      <td>125000000</td>
+      <td>123</td>
+      <td>546388105</td>
+      <td>1.956406</td>
+      <td>2000</td>
+      <td>John Woo</td>
+      <td>Adventure|Action|Thriller</td>
+      <td>421388105</td>
+    </tr>
+    <tr>
+      <th>2634</th>
+      <td>Harry Potter and the Philosopher's Stone</td>
+      <td>7.2</td>
+      <td>125000000</td>
+      <td>152</td>
+      <td>976475550</td>
+      <td>8.021423</td>
+      <td>2001</td>
+      <td>Chris Columbus</td>
+      <td>Adventure|Fantasy|Family</td>
+      <td>851475550</td>
+    </tr>
+    <tr>
+      <th>3911</th>
+      <td>The Lord of the Rings: The Two Towers</td>
+      <td>7.8</td>
+      <td>79000000</td>
+      <td>179</td>
+      <td>926287400</td>
+      <td>8.095275</td>
+      <td>2002</td>
+      <td>Peter Jackson</td>
+      <td>Adventure|Fantasy|Action</td>
+      <td>847287400</td>
+    </tr>
+    <tr>
+      <th>4949</th>
+      <td>The Lord of the Rings: The Return of the King</td>
+      <td>7.9</td>
+      <td>94000000</td>
+      <td>201</td>
+      <td>1118888979</td>
+      <td>7.122455</td>
+      <td>2003</td>
+      <td>Peter Jackson</td>
+      <td>Adventure|Fantasy|Action</td>
+      <td>1024888979</td>
+    </tr>
+    <tr>
+      <th>6977</th>
+      <td>Shrek 2</td>
+      <td>6.5</td>
+      <td>150000000</td>
+      <td>93</td>
+      <td>919838758</td>
+      <td>2.191033</td>
+      <td>2004</td>
+      <td>Andrew Adamson|Kelly Asbury|Conrad Vernon</td>
+      <td>Adventure|Animation|Comedy|Family|Fantasy</td>
+      <td>769838758</td>
+    </tr>
+    <tr>
+      <th>6190</th>
+      <td>Harry Potter and the Goblet of Fire</td>
+      <td>7.3</td>
+      <td>150000000</td>
+      <td>157</td>
+      <td>895921036</td>
+      <td>5.939927</td>
+      <td>2005</td>
+      <td>Mike Newell</td>
+      <td>Adventure|Fantasy|Family</td>
+      <td>745921036</td>
+    </tr>
+    <tr>
+      <th>6555</th>
+      <td>Pirates of the Caribbean: Dead Man's Chest</td>
+      <td>6.8</td>
+      <td>200000000</td>
+      <td>151</td>
+      <td>1065659812</td>
+      <td>4.205992</td>
+      <td>2006</td>
+      <td>Gore Verbinski</td>
+      <td>Adventure|Fantasy|Action</td>
+      <td>865659812</td>
+    </tr>
+    <tr>
+      <th>7388</th>
+      <td>Harry Potter and the Order of the Phoenix</td>
+      <td>7.2</td>
+      <td>150000000</td>
+      <td>138</td>
+      <td>938212738</td>
+      <td>4.878162</td>
+      <td>2007</td>
+      <td>David Yates</td>
+      <td>Adventure|Fantasy|Family|Mystery</td>
+      <td>788212738</td>
+    </tr>
+    <tr>
+      <th>2875</th>
+      <td>The Dark Knight</td>
+      <td>8.1</td>
+      <td>185000000</td>
+      <td>152</td>
+      <td>1001921825</td>
+      <td>8.466668</td>
+      <td>2008</td>
+      <td>Christopher Nolan</td>
+      <td>Drama|Action|Crime|Thriller</td>
+      <td>816921825</td>
+    </tr>
+    <tr>
+      <th>1386</th>
+      <td>Avatar</td>
+      <td>7.1</td>
+      <td>237000000</td>
+      <td>162</td>
+      <td>2781505847</td>
+      <td>9.432768</td>
+      <td>2009</td>
+      <td>James Cameron</td>
+      <td>Action|Adventure|Fantasy|Science Fiction</td>
+      <td>2544505847</td>
+    </tr>
+    <tr>
+      <th>1930</th>
+      <td>Toy Story 3</td>
+      <td>7.5</td>
+      <td>200000000</td>
+      <td>103</td>
+      <td>1063171911</td>
+      <td>2.711136</td>
+      <td>2010</td>
+      <td>Lee Unkrich</td>
+      <td>Animation|Family|Comedy</td>
+      <td>863171911</td>
+    </tr>
+    <tr>
+      <th>3374</th>
+      <td>Harry Potter and the Deathly Hallows: Part 2</td>
+      <td>7.7</td>
+      <td>125000000</td>
+      <td>130</td>
+      <td>1327817822</td>
+      <td>5.711315</td>
+      <td>2011</td>
+      <td>David Yates</td>
+      <td>Adventure|Family|Fantasy</td>
+      <td>1202817822</td>
+    </tr>
+    <tr>
+      <th>4361</th>
+      <td>The Avengers</td>
+      <td>7.3</td>
+      <td>220000000</td>
+      <td>143</td>
+      <td>1519557910</td>
+      <td>7.637767</td>
+      <td>2012</td>
+      <td>Joss Whedon</td>
+      <td>Science Fiction|Action|Adventure</td>
+      <td>1299557910</td>
+    </tr>
+    <tr>
+      <th>5422</th>
+      <td>Frozen</td>
+      <td>7.5</td>
+      <td>150000000</td>
+      <td>102</td>
+      <td>1274219009</td>
+      <td>6.112766</td>
+      <td>2013</td>
+      <td>Chris Buck|Jennifer Lee</td>
+      <td>Animation|Adventure|Family</td>
+      <td>1124219009</td>
+    </tr>
+    <tr>
+      <th>634</th>
+      <td>The Hobbit: The Battle of the Five Armies</td>
+      <td>7.1</td>
+      <td>250000000</td>
+      <td>144</td>
+      <td>955119788</td>
+      <td>10.174599</td>
+      <td>2014</td>
+      <td>Peter Jackson</td>
+      <td>Adventure|Fantasy</td>
+      <td>705119788</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Star Wars: The Force Awakens</td>
+      <td>7.5</td>
+      <td>200000000</td>
+      <td>136</td>
+      <td>2068178225</td>
+      <td>11.173104</td>
+      <td>2015</td>
+      <td>J.J. Abrams</td>
+      <td>Action|Adventure|Science Fiction|Fantasy</td>
+      <td>1868178225</td>
+    </tr>
+  </tbody>
+</table>
+</br>
 
 <b>8. Top 5 Successful Director (Earning Wise)</b>
 <ul>Steven Spielberg</ul>
@@ -78,10 +1267,18 @@ Note : Movies will be considered for shortlisting only if below conditions are s
 <ul>Peter Jackson</ul>
 <ul>Terence Young</ul>
 <ul>Stanley Kubrick</ul>
-
+<pre>
+Steven Spielberg    6 Movies
+James Cameron       3 Movies
+Peter Jackson       3 Movies
+Terence Young       2 Movies
+Stanley Kubrick     2 Movies
+</pre>
+</br>
 <b>9. Visualize how top earnings have grown through out the years</b>
 
-<ul>The Below graph suggest that the profit has grown linearly throughout the years.</ul>
+<ul>
+The Below graph suggest that the profit has grown linearly throughout the years. As we can also see that the correlation between Years and Earnings have come about 0.77.Hence we can say that as we advance in time, The profit are going to be even higher. </ul>
 
 <img src ="9.png">
 </br>
@@ -94,5 +1291,37 @@ Note : Movies will be considered for shortlisting only if below conditions are s
 
 </br>
 </br>
+<b>11. Analyze the pattern of movie making by the most successful Director </b>
+
+<ul>The Movie Career is well expanded since 1979. The Director makes max of 2 Movies in a Year</ul>
+
+The Below Histogram gives us graphical representation of director's career:</br>
+
+<img src='11.png'>
+
+</br></br>
+<b>Conclusion:</b>
+
+<ul>1. Steven Spielberg is the most successful Director of all time.</br>
+-> He has produced most number of movies (27) with only one Failure which came in his first movie 1941.
+   6 of his movies has feartured in most revenue created movies in past 55 years, Highest by any director. (please check Question No - 6,7,8)</ul>
+   
+<ul>2. Crime Based Movies have got the best ratings</br>
+-> Please see Question 1 </ul>
+<ul>
+3. Adventure Movies are the costliest to make.</br>
+-> All the top 5 costliest movie fall under Adventure gener
+</ul>
+
+<b>Limitations: </b>
+
+Movies were considered for shortlisting only if below conditions were satisfied:
+
+<ul>Movie run time is greater than 90 Minutes</ul>
+<ul>budget is greater than 0</ul>
+<ul>revenue is greater than 0</ul>
+<ul>Director in not blank</ul>
+</br>
+
 <h5><u>References: Stack Overflow</u></h5>
 <h6>Created by: Vishesh Mani Singh on 03/18/2018</h6>
